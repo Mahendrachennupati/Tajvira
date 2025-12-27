@@ -1,0 +1,152 @@
+/* Navbar Styles */
+.navbar-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo-svg {
+    height: 4rem;
+    width: 12rem;
+}
+
+.navbar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.navbar-menu li {
+    width: 100%;
+}
+
+.navbar-menu a {
+    font-weight: 500;
+    text-decoration: none;
+    color: #4b5563;
+    transition: color 0.2s ease;
+    display: block;
+    padding: 0.5rem 0;
+}
+
+.navbar-menu a:hover {
+    color: var(--primary-color);
+}
+
+.navbar-menu a.active {
+    color: var(--primary-color);
+}
+
+.navbar-actions {
+    display: none;
+    gap: 1rem;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.btn-calculator {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    background-color: rgb(51 51 51 / var(--tw-bg-opacity, 1));
+    color: #ffffff;
+    border: none;
+    border-radius: 9999px;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-calculator:hover {
+    background-color: #1a1a1a;
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+}
+
+.btn-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-toggle i {
+    font-size: 28px;
+    color: #4b5563;
+}
+
+.Construction_btn {
+    background-color: var(--primary-color);
+    border-radius: 15px;
+    width: 100%;
+    color: #ffffff;
+    padding: 15px;
+    border-width: 0px;
+}
+
+/* Desktop Menu */
+@media (min-width: 768px) {
+    .navbar-menu {
+        position: static;
+        top: auto;
+        left: auto;
+        right: auto;
+        background-color: transparent;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    .navbar-menu li {
+        width: auto;
+    }
+
+    .navbar-menu a {
+        padding: 0;
+    }
+
+    .navbar-actions {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        gap: 1rem;
+        top: auto;
+        right: auto;
+        background-color: transparent;
+        padding: 0;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .btn-toggle {
+        display: none !important;
+    }
+
+
+}

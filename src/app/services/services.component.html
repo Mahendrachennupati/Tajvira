@@ -1,0 +1,172 @@
+<!-- hero section start -->
+<section>
+    <div class="services-hero  flex flex-column  justify-content-center align-items-center">
+        <div class="container text-center py-8">
+            <span class="logo_orng font-bold text-sm m-0 p-0">WHAT WE DO</span>
+            <h1 class="m-1">Our Services</h1>
+            <p class="text-lg line-height-3">Comprehensive construction solutions tailored to your needs, from
+                foundation to
+                finishing.
+            </p>
+        </div>
+
+    </div>
+</section>
+<!-- hero section end -->
+<!-- services card section start -->
+<section class="services-section container">
+    <div class="services-grid">
+
+        <!-- CARD -->
+        <div class="service-card">
+            <div class="icon-box light">R</div>
+            <h3>Residential<br />Construction</h3>
+            <p>
+                Turnkey home construction services with complete project management.
+            </p>
+            <ul>
+                <li>Custom Design</li>
+                <li>Structural Warranty</li>
+                <li>On-time Delivery</li>
+            </ul>
+        </div>
+
+        <!-- CARD -->
+        <div class="service-card">
+            <div class="icon-box light">C</div>
+            <h3>Commercial<br />Projects</h3>
+            <p>
+                Office spaces, retail stores, and commercial complexes built to scale.
+            </p>
+            <ul>
+                <li>Scalable Infrastructure</li>
+                <li>Safety Compliance</li>
+                <li>Modern Architecture</li>
+            </ul>
+        </div>
+
+        <!-- ACTIVE CARD -->
+        <div class="service-card">
+            <div class="icon-box light">I</div>
+            <h3>Interior Design</h3>
+            <p>
+                Aesthetics meets functionality. Transform your space with our experts.
+            </p>
+            <ul>
+                <li>3D Visualization</li>
+                <li>Premium Finish</li>
+                <li>Space Planning</li>
+            </ul>
+        </div>
+
+        <!-- CARD -->
+        <div class="service-card">
+            <div class="icon-box light">R</div>
+            <h3>Renovation</h3>
+            <p>
+                Breathe new life into old structures with structural strengthening.
+            </p>
+            <ul>
+                <li>Remodeling</li>
+                <li>Restoration</li>
+                <li>Value Addition</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<!-- services cards section end -->
+
+<!-- pakages section start -->
+<section class=" container py-4">
+
+    <!-- HEADER -->
+    <div class="pricing-header">
+        <span class="tag">TRANSPARENT PRICING</span>
+        <h2>Construction Packages</h2>
+        <p>Choose the plan that fits your vision and budget. No hidden costs.</p>
+
+    </div>
+
+    <!-- GRID -->
+    <div class="grid justify-content-center pricing-grid mb-4">
+        <div class="col-12 md:col-4" *ngFor="let pkg of packages">
+            <p-card
+                styleClass="border-round-3xl overflow-hidden {{pkg.popular?'border-3 border-solid border-orange-500':''}} shadow-2 surface-card basic-card">
+                <!-- IMAGE HEADER -->
+                <ng-template pTemplate="header">
+                    <div class="relative">
+                        <img [alt]="pkg.title + ' plan'" src="/assets/home/quality.avif"
+                            class="w-full h-16rem object-cover " />
+                        <div class="absolute w-full h-full left-0 top-0 surface-900 opacity-50">
+
+                        </div>
+                        <span class="absolute left-0 bottom-0 m-3 px-3 py-1  text-white font-bold text-xl ">
+                            {{ pkg.title }}
+                        </span>
+
+                        <!-- Popular badge (optional) -->
+                        <span *ngIf="pkg.popular"
+                            class="absolute right-0 top-0 px-4 popular py-1 text-base font-semibold text-white bg-orange-500">
+                            Most Popular
+                        </span>
+                    </div>
+                </ng-template>
+
+                <!-- BODY -->
+                <div class="surface-0 border-bottom-1 surface-border pb-4 h-23rem">
+                    <!-- Short description -->
+                    <p class="text-sm text-gray-600 mb-4">
+                        {{ pkg.desc }}
+                    </p>
+
+                    <!-- Price -->
+                    <div class="mb-3">
+                        <div class="text-2xl font-bold mb-1">
+                            {{ pkg.price }} / sq.ft
+                        </div>
+                        <div class="text-xs text-gray-400">
+                            Estimate includes material &amp; labor
+                        </div>
+                    </div>
+
+                    <hr class="my-2 border-none surface-border border-top-1" />
+
+                    <!-- Timeline pill -->
+                    <div class="my-4">
+                        <div
+                            class="surface-50 w-full border-1 surface-border border-round-md p-2 inline-flex align-items-center gap-1 text-base">
+                            <span class="text-orange-500 font-semibold">Timeline:</span>
+                            <span class="text-gray-700">{{ pkg.timeline }}</span>
+                        </div>
+                    </div>
+
+                    <!-- Key inclusions -->
+                    <div class="mb-2 text-xs text-gray-400 font-semibold">
+                        KEY INCLUSIONS
+                    </div>
+                    <ul class="list-none p-0 m-0 flex flex-column gap-2 text-sm text-gray-700">
+                        <li class="flex align-items-center gap-2" *ngFor="let item of pkg.inclusions">
+                            <i class="pi pi-check text-green-500 text-sm"></i>
+                            <span>{{ item }}</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- FOOTER / CTA -->
+                <ng-template pTemplate="footer">
+                    <div class="mt-0 ">
+                        <p-button [label]="pkg.button" icon="pi pi-arrow-right" iconPos="right"
+                            styleClass="w-full font-semibold p-button-raised p-3 {{pkg.popular?'bg_orng':''}}"></p-button>
+                    </div>
+                </ng-template>
+            </p-card>
+        </div>
+    </div>
+
+
+</section>
+
+
+<!-- packages section end -->

@@ -1,0 +1,144 @@
+<!-- hero section start -->
+<section>
+    <div class="cost-hero surface-900 flex flex-column  justify-content-center align-items-center">
+        <div class="container text-center py-8">
+            <h1 class="m-1">Construction Cost Estimator</h1>
+            <p class="text-lg line-height-3">Get a transparent, detailed cost breakdown for your dream project in
+                seconds. Adjust parameters to see how material choices impact your budget.
+            </p>
+        </div>
+
+    </div>
+</section>
+<!-- hero section end -->
+
+<!-- cost estimators section start -->
+<section class="py-4 container">
+    <div class="grid">
+
+        <!-- LEFT : PROJECT DETAILS -->
+        <div class="col-12 md:col-6  ">
+            <div class="border-round-2xl h-full shadow-3 ">
+                <p-card styleClass="bg-transparent border-none shadow-none px-2 my-0">
+
+                    <div class="card-header">
+                        <h3 class="mt-0">Project Details</h3>
+                        <i class="pi pi-refresh refresh-icon text-lg" (click)="resetpack()"></i>
+                    </div>
+
+                    <!-- CONSTRUCTION TYPE -->
+                    <label class="block mb-2">Construction Type</label>
+                    <div class="flex gap-2 mb-4 flex-wrap">
+                        <p-button label="Residential"
+                            styleClass="p-button-sm md:p-button-lg {{(type !== 'Residential')?'p-button-outlined p-button-secondary':''}} {{(type == 'Residential')?'bg_orng':''}}"
+                            (onClick)="setType('Residential')" class="type-btn"></p-button>
+
+                        <p-button label="Commercial"
+                            styleClass="p-button-sm md:p-button-lg {{(type !== 'Commercial')?'p-button-outlined p-button-secondary':''}} {{(type == 'Commercial')?'bg_orng':''}}"
+                            (onClick)="setType('Commercial')" class="type-btn"></p-button>
+
+                        <p-button label="Renovation"
+                            styleClass="p-button-sm md:p-button-lg {{(type !== 'Renovation')?'p-button-outlined p-button-secondary':''}} {{(type == 'Renovation')?'bg_orng':''}}"
+                            (onClick)="setType('Renovation')" class="type-btn"></p-button>
+                    </div>
+
+                    <!-- INPUTS -->
+                    <div class="grid mb-4">
+                        <div class="col-12 md:col-6">
+                            <label>Plot Area (sq. ft)</label>
+                            <p-inputNumber [(ngModel)]="plotArea" class="w-full"></p-inputNumber>
+                        </div>
+
+                        <div class="col-12 md:col-6">
+                            <label>Floors (G + n)</label>
+                            <p-inputNumber [(ngModel)]="floors" class="w-full"></p-inputNumber>
+                        </div>
+                    </div>
+
+                    <!-- PACKAGE QUALITY -->
+                    <label class="block mb-2">Package Quality</label>
+
+                    <div class="package-option" *ngFor="let pkg of packages"
+                        [class.active]="selectedPackage === pkg.name" (click)="selectPackage(pkg)">
+
+                        <p-radioButton name="pkg" [value]="pkg.name" [(ngModel)]="selectedPackage"></p-radioButton>
+
+                        <div class="package-info">
+                            <strong class="block">{{ pkg.name }}</strong>
+                            <small>₹{{ pkg.rate }}/sq.ft base rate</small>
+                        </div>
+
+                    </div>
+
+                </p-card>
+            </div>
+
+        </div>
+
+        <!-- RIGHT : ESTIMATED COST -->
+        <div class="col-12 md:col-6">
+            <div class="estimate-card border-round-2xl h-full shadow-3 relative overflow-hidden">
+
+                <p-card styleClass="text-white bg-transparent border-none shadow-none px-2 my-0">
+
+                    <h3 class="mt-0 ">Estimated Cost</h3>
+                    <p class="subtext">
+                        Based on current market rates for Residential projects.
+                    </p>
+
+                    <h1 class="amount">₹{{ estimatedCost | number }}</h1>
+
+                    <!-- DONUT -->
+                    <div class="flex justify-content-center">
+                        <p-chart type="doughnut" [data]="chartData" [options]="chartOptions" class="chart"></p-chart>
+                    </div>
+
+
+                    <div class="legend">
+                        <span class="dot material"></span> Materials
+                        <span class="dot service"></span> Services & Fees
+                        <span class="dot labour"></span> Labour Charges
+                    </div>
+
+                    <div class="note">
+                        This is an approximate estimate. Final costs may vary based on
+                        specific design choices and site conditions.
+                    </div>
+
+                    <p-button label="Download Detailed Quote" icon="pi pi-download"
+                        styleClass="download-btn w-full bg_orng"></p-button>
+
+                </p-card>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- cost estimators section end -->
+
+<!-- directions of costestimator -->
+<section class="container py-4">
+    <div class=" border-round-2xl shadow-3 p-4 ">
+        <h2>How It Works</h2>
+        <div class="grid directions">
+            <div class="text-center px-6 col-12 md:col-4">
+                <button class="border-circle logo_orng font-semibold">1</button>
+                <h3>Enter Details</h3>
+                <p class="text-sm subtext">Input your plot area, number of floors, and construction type.</p>
+            </div>
+            <div class="text-center px-6 col-12 md:col-4">
+                <button class="border-circle logo_orng font-semibold">2</button>
+                <h3>Select Quality</h3>
+                <p class="text-sm subtext">Choose between Basic, Standard, or Premium material packages.</p>
+            </div>
+            <div class="text-center px-6 col-12 md:col-4">
+                <button class="border-circle logo_orng font-semibold">3</button>
+                <h3>Get Estimate</h3>
+                <p class="text-sm subtext">View a detailed cost breakdown and download the quote.</p>
+            </div>
+        </div>
+    </div>
+
+</section>

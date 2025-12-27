@@ -1,0 +1,128 @@
+<!-- hero section start -->
+<section>
+    <div class="contact-hero  flex flex-column  justify-content-center align-items-center">
+        <div class="container text-center py-8">
+            <h1 class="m-1">Contact Us</h1>
+            <p class="text-lg line-height-3">Have a project in mind? Let's discuss how we can bring your vision to life.
+            </p>
+        </div>
+
+    </div>
+</section>
+<!-- hero section end -->
+
+<!-- contact form section start -->
+<section class="py-3 container contact-forms">
+
+    <div class="grid  ">
+
+        <!-- LEFT : CONTACT INFO -->
+        <div class="col-12 md:col-6 p-2">
+            <div class=" surface-900 border-round-2xl h-full">
+                <p-card styleClass="contact-info-card bg-transparent border-none shadow-none ">
+
+                    <h2 class="title text-white">Get In Touch</h2>
+
+                    <!-- VISIT -->
+                    <div class="info-item">
+                        <div class="icon-box">
+                            <i class="pi pi-map-marker"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white">Visit Us</h4>
+                            <p>123, Tech Park Road, Hitech City, Hyderabad, 500081</p>
+                        </div>
+                    </div>
+
+                    <!-- CALL -->
+                    <div class="info-item">
+                        <div class="icon-box">
+                            <i class="pi pi-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Call Us</h4>
+                            <p>+91 98765 43210</p>
+                            <small>Mon - Sat, 9am - 7pm</small>
+                        </div>
+                    </div>
+
+                    <!-- EMAIL -->
+                    <div class="info-item">
+                        <div class="icon-box">
+                            <i class="pi pi-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email Us</h4>
+                            <p>hello@tajvira.com</p>
+                        </div>
+                    </div>
+
+                    <p-divider styleClass="my-6"></p-divider>
+
+                    <!-- WHATSAPP -->
+                    <p-button label="Chat on WhatsApp" icon="pi pi-whatsapp"
+                        styleClass="w-full whatsapp-btn p-button-success"></p-button>
+
+                </p-card>
+            </div>
+        </div>
+
+        <!-- RIGHT : FORM -->
+        <div class="col-12 md:col-6 p-2 overflow-hidden">
+            <div class=" shadow-3  border-round-2xl">
+                <p-card styleClass="contact-form-card bg-transparent border-none shadow-none">
+
+                    <h2 class="title">Send a Message</h2>
+
+                    <div class="grid form-grid">
+
+                        <div class="col-12 md:col-6">
+                            <label>Name</label>
+                            <input pInputText placeholder="John Doe" class="w-full" />
+                        </div>
+
+                        <div class="col-12 md:col-6">
+                            <label>Phone</label>
+                            <input pInputText placeholder="+91 99999 99999" class="w-full" />
+                        </div>
+
+                        <div class="col-12">
+                            <label>Email</label>
+                            <input pInputText placeholder="john@example.com" class="w-full" />
+                        </div>
+
+                        <div class="col-12">
+                            <label>Project Type</label>
+                            <p-dropdown [options]="projectTypes" placeholder="Residential Construction"
+                                styleClass="w-full"></p-dropdown>
+                        </div>
+
+                        <div class="col-12">
+                            <label>Message</label>
+                            <textarea pInputTextarea rows="5" placeholder="Tell us about your project requirements..."
+                                class="w-full"></textarea>
+                        </div>
+
+                        <div class="col-12">
+                            <p-button label="Submit Enquiry" styleClass="w-full bg_orng"></p-button>
+                        </div>
+
+                    </div>
+
+                </p-card>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<!-- contact form section end -->
+
+<!-- maps section start -->
+<section class="container py-4">
+    <div class=" h-25rem bg-gray-200 border-round-2xl overflow-hidden shadow-soft"><iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.452818967566!2d78.375!3d17.445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDI2JzQyLjAiTiA3OMKwMjInMzAuMCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+            width="100%" height="100%" allowfullscreen="" loading="lazy" title="Google Map"
+            style="border: 0px;"></iframe></div>
+</section>
+<!-- maps section end -->
