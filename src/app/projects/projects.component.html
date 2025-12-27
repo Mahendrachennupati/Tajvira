@@ -1,0 +1,73 @@
+<section class="projects-section">
+
+    <!-- TOP DARK HEADER -->
+    <div class="projects-hero flex flex-column  justify-content-center align-items-center">
+        <div class="container text-center">
+            <h2>Our Projects</h2>
+            <p>Explore our portfolio of delivered excellence across various sectors.</p>
+        </div>
+
+    </div>
+
+    <div class="container py-6">
+
+        <!-- FILTERS -->
+        <div class="filters">
+            <p-button label="All"
+                styleClass="p-button-rounded p-button-outlined p-button-secondary  {{(activeFilter === 'All')?'bg_orng text-white':''}} {{(activeFilter === 'All')?'bg_orng':''}}"
+                (onClick)="filterProjects('All')">
+            </p-button>
+
+            <p-button label="Residential"
+                styleClass="p-button-rounded p-button-outlined p-button-secondary {{(activeFilter === 'Residential')?'bg_orng text-white':''}} "
+                (onClick)="filterProjects('Residential')">
+            </p-button>
+
+            <p-button label="Commercial"
+                styleClass="p-button-rounded p-button-outlined p-button-secondary {{(activeFilter === 'Commercial')?'bg_orng text-white':''}} "
+                (onClick)="filterProjects('Commercial')">
+            </p-button>
+
+            <p-button label="Interiors"
+                styleClass="p-button-rounded p-button-outlined p-button-secondary {{(activeFilter === 'Interiors')?'bg_orng text-white':''}} "
+                (onClick)="filterProjects('Interiors')">
+            </p-button>
+
+            <p-button label="Renovation"
+                styleClass="p-button-rounded p-button-outlined p-button-secondary {{(activeFilter === 'Renovation')?'bg_orng text-white':''}} "
+                (onClick)="filterProjects('Renovation')">
+            </p-button>
+        </div>
+        <!-- PROJECT CARDS -->
+        <div class="grid">
+            <div class="col-12 md:col-4" *ngFor="let project of filteredProjects">
+                <div class="project-card">
+
+                    <!-- IMAGE -->
+                    <div class="image-wrap">
+                        <img src="/assets/home/quality.avif" alt="project" />
+                    </div>
+
+                    <!-- CONTENT -->
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="category">{{ project.category }}</span>
+                            <span class="status">Completed</span>
+                        </div>
+
+                        <h3>{{ project.title }}</h3>
+                        <p>{{ project.desc }}</p>
+
+                        <div class="card-footer">
+                            <span><i class="pi pi-map-marker"></i> {{ project.location }}</span>
+                            <span>{{ project.area }}</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>

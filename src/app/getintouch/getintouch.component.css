@@ -1,0 +1,87 @@
+/* HERO */
+.contact-hero {
+    padding-top: var(--navbar-height);
+    /* text-align: center; */
+    background-color: #3a3a3a;
+    min-height: calc(60vh - var(--navbar-height));
+}
+
+.contact-hero h1 {
+    color: #fff;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin-bottom: .5rem;
+}
+
+.contact-hero p {
+    color: #cfd8dc;
+    max-width: 42rem;
+}
+
+/* contact form  */
+.contact-forms {
+    background-color: rgba(249, 250, 251, 1);
+}
+
+/* LEFT CARD */
+.contact-info-card {
+    background: #2f2f2f;
+    color: #fff;
+    height: 100%;
+}
+
+.contact-info-card .title {
+    margin-bottom: 2rem;
+}
+
+/* INFO ITEMS */
+.info-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+    align-items: flex-start;
+}
+
+.info-item h4 {
+    color: #ffffff;
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.info-item p {
+    margin: 0.25rem 0;
+    color: #bdbdd5;
+}
+
+.info-item small {
+    color: #94a3b8;
+}
+
+/* ICON */
+.icon-box {
+    min-width: 47px;
+    min-height: 47px;
+    background: #3a3a3a;
+    border-radius: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-box i {
+    color: #ff7a00;
+    font-size: 1.25rem;
+}
+
+
+.contact-form-card .title {
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+}
+
+/* FORM */
+label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}

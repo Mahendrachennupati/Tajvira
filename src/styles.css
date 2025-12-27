@@ -1,0 +1,251 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --primary-color: #f97d09;
+    --primary-color-text: #555753;
+    --tw-bg-opacity: 1;
+    --navbar-height: 80px;
+}
+
+.logo_orng {
+    color: var(--primary-color);
+}
+
+.logo_grey {
+    color: var(--primary-color-text);
+}
+
+.logo_black_bg {
+    background-color: rgb(51 51 51 / var(--tw-bg-opacity, 1)) !important;
+    border-color: #dcdcdc !important;
+}
+
+
+
+.text-gray-600 {
+    --tw-text-opacity: 1;
+    color: rgb(75 85 99 / var(--tw-text-opacity, 1));
+}
+
+.text-gray-400 {
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity, 1));
+}
+
+.text-gray-200 {
+    --tw-text-opacity: 1;
+    color: rgb(229 231 235 / var(--tw-text-opacity, 1));
+}
+
+.bg_orng {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    outline-color: var(--primary-color) !important;
+
+}
+
+body {
+    color: #2B2D44;
+    font-family: Poppins, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    /* background-color: blue; */
+}
+
+/* Container */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.p-inputtext:enabled:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 0.1rem var(--primary-color) !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color-text);
+}
+
+.title-image {
+    height: 75vh;
+}
+
+.title-image img {
+    width: 100%;
+    height: 100%;
+}
+
+.main_title {
+    /* Min: 20px (small phones), Pref: scales with 3vw, Max: 32px (large desktop) */
+    font-size: clamp(20px, 3vw, 36px);
+}
+
+.sub_title {
+    /* Min: 18px, Pref: 2.5vw, Max: 26px */
+    font-size: clamp(18px, 2.5vw, 28px);
+}
+
+.desc {
+    /* Min: 14px (easy to read on mobile), Pref: 2vw, Max: 20px */
+    font-size: clamp(14px, 2vw, 1.125rem);
+}
+
+/* animations for scroll-animate directive */
+.animate {
+    /* Ensures persistence of animation effects */
+    opacity: 1 !important;
+}
+
+/* Fade In Left */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fadeInLeft {
+    animation-name: fadeInLeft;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+/* Fade In Right */
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fadeInRight {
+    animation-name: fadeInRight;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+/* Fade In Up */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fadeInUp {
+    animation-name: fadeInUp;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+/* Fade In Down */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fadeInDown {
+    animation-name: fadeInDown;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+/* Zoom In */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.zoomIn {
+    animation-name: zoomIn;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slideInLeft {
+    animation: slideInLeft 0.8s ease-out both;
+}
+
+.loader-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.351);
+    backdrop-filter: blur(1px);
+    z-index: 3204;
+    /* just above content */
+}
+
+.loader-card {
+    background: transparent;
+    box-shadow: none;
+}
+
+.loader {
+    top: 45%;
+    left: 45%;
+    position: fixed;
+}

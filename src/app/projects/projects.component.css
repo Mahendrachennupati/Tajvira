@@ -1,0 +1,117 @@
+/* HERO */
+.projects-hero {
+    background: #3a3a3a;
+    padding-top: var(--navbar-height);
+    /* text-align: center; */
+    min-height: calc(60vh - var(--navbar-height));
+}
+
+.projects-hero h2 {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: .5rem;
+}
+
+.projects-hero p {
+    color: #cfd8dc;
+    font-size: 1.1rem;
+}
+
+/* FILTERS */
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+/* Base PrimeNG button override */
+
+/* Active */
+.filter_btn.active {
+    background: #ff7a00 !important;
+    color: #fff;
+    border-color: #ff7a00;
+    box-shadow: 0 8px 20px rgba(255, 122, 0, 0.35);
+}
+
+/* PROJECT CARD */
+.project-card {
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    height: 100%;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+}
+
+/* IMAGE */
+.image-wrap {
+    height: 220px;
+    overflow: hidden;
+}
+
+.image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.08);
+}
+
+/* CARD BODY */
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.category {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #ff7a00;
+}
+
+.status {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+    background: #dcfce7;
+    color: #166534;
+    border-radius: 6px;
+}
+
+.card-body h3 {
+    margin: 0.5rem 0;
+    font-size: 1.25rem;
+}
+
+.card-body p {
+    color: #6b7280;
+    font-size: 0.95rem;
+}
+
+/* FOOTER */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.2rem;
+    font-size: 0.85rem;
+    color: #6b7280;
+}

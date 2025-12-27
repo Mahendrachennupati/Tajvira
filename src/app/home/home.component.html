@@ -1,0 +1,363 @@
+<div>
+    <!-- baner section start -->
+    <section class="hero-section">
+        <!-- Overlay -->
+        <div class="hero-overlay"></div>
+
+        <!-- Background image -->
+        <p-image src="/assets/home/baner.avif" alt="Hero Image" loading="lazy"
+            imageClass="hero-img absolute top-0 left-0 w-full h-full z-0 ">
+        </p-image>
+
+        <!-- Content -->
+        <div class="container hero-content">
+            <div class="grid align-items-center min-h-screen">
+
+                <!-- LEFT CONTENT -->
+                <div class="col-12 md:col-7 hero-text">
+                    <h1>
+                        Crafting Legacies,<br />
+                        <span class="highlight">Building Dreams.</span>
+                    </h1>
+
+                    <p>
+                        We construct homes and commercial spaces that stand the test of time.
+                        TajVira Constructions brings precision, integrity, and craftsmanship
+                        to every project.
+                    </p>
+
+                    <p-button *ngIf="!showConsulation" label="Book Free Consultation" icon="pi pi-arrow-right"
+                        iconPos="right" styleClass="cta-btn bg_orng" (click)="showConsulation = true">
+                    </p-button>
+                </div>
+
+                <!-- RIGHT FORM -->
+                <div class="col-12 md:col-5" *ngIf="showConsulation">
+                    <div class="glass-form">
+                        <h2>Get Professional Guidance</h2>
+
+                        <input pInputText placeholder="Name" class="w-full mb-3" />
+                        <input pInputText placeholder="+91 Phone number" class="w-full mb-3" />
+                        <input pInputText placeholder="Email" class="w-full mb-4" />
+
+                        <p-button label="Book Free Consultation" (click)="showConsulation = false"
+                            icon="pi pi-arrow-right" iconPos="right" styleClass="cta-btn w-full bg_orng">
+                        </p-button>
+
+                        <p class="form-note">
+                            By submitting this form, I agree to the
+                            <a href="#">privacy policy</a>.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- baner section end -->
+
+    <!-- companies section start  -->
+    <section class="border-x-none border-top-none border-bottom-2  border-solid border-200 py-4">
+
+        <div class="grid container text-center text-gray-400 ">
+            <h3 class="main_title col-6 md:col-3 m-0">Ultratech</h3>
+            <h3 class="main_title col-6 md:col-3 m-0">Asian Paints</h3>
+            <h3 class="main_title col-6 md:col-3 m-0">Khajania</h3>
+            <h3 class="main_title col-6 md:col-3 m-0">Scheneider</h3>
+
+        </div>
+    </section>
+    <!-- companies section end  -->
+
+    <!-- Standards section start -->
+    <section>
+        <div class="container grid py-4 ">
+            <div class="col-12 md:col-5 sm:my-2 relative ">
+
+                <div class="sticky top-0 w-full">
+                    <span class="font-bold logo_orng">THE TAJVIRA STANDARD</span>
+
+                    <h2 class="text-4xl md:text-6xl m-0 font-bold line-height-1">
+                        We don't just build.<br />We Engineer Trust.
+                    </h2>
+
+                    <p class="text-xl text-gray-600 line-height-3">
+                        Traditional construction is broken—hidden costs, indefinite delays,
+                        and poor quality. We’ve rebuilt the process from the ground up to give
+                        you peace of mind.
+                    </p>
+
+                    <div class="relative  border-round-2xl overflow-hidden h-20rem">
+                        <img src="/assets/home/quality.avif" class="w-full h-full object-fit" loading="lazy" />
+
+                        <div class="absolute top-0 left-0 w-full h-full  surface-900 opacity-40"></div>
+
+                        <div class="absolute bottom-0 p-3 left-0 z-2">
+                            <h1 class="text-white m-0 text-base md:text-md">100% Quality Check</h1>
+                            <p class="text-gray-200 m-0 text-sm desc">
+                                Every stage verified by certified engineers.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-12 md:col-7 ">
+                <div class="grid px-1 md:px-4 ">
+                    <div class="col-12 md:col-6 " *ngFor="let item of qualityItems;let i=index">
+                        <div class="border-round-2xl qulity_container shadow-2 p-3 ">
+                            <a class="quality-link ">
+                                <i class="pi" [ngClass]="item.icon"></i>
+                            </a>
+                            <h3 class="sub_title font-bold my-1 py-1">
+                                {{ item.title }}
+                            </h3>
+                            <p class="text-gray-500 text-sm pt-0 mt-1">
+                                {{ item.description }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <!-- standard section end -->
+
+    <!-- expertise section start -->
+    <section class="surface-900 py-4">
+        <div class="max-w-7xl mx-auto container px-4">
+
+            <!-- Header -->
+            <div class="flex flex-column md:flex-row justify-content-between align-items-start md:align-items-center">
+                <div>
+                    <span class="text-orange-500 font-semibold text-sm letter-spacing-2">
+                        OUR EXPERTISE
+                    </span>
+
+                    <h2 class="text-4xl md:text-6xl font-bold text-white mt-2 mb-0 line-height-1">
+                        Complete Construction<br />
+                        Solutions
+                    </h2>
+                </div>
+
+                <a class="flex align-items-center gap-2 text-white cursor-pointer mt-4 md:mt-0">
+                    Explore all services
+                    <span class="border-circle surface-700 p-2">
+                        <i class="pi pi-arrow-right"></i>
+                    </span>
+
+                </a>
+
+            </div>
+            <div class="my-6">
+                <p-divider></p-divider>
+            </div>
+            <!-- Cards -->
+            <div>
+                <p-carousel #carousel [value]="services" [numVisible]="3" [numScroll]="1" [circular]="true"
+                    [responsiveOptions]="responsiveOptions" autoPlayInterval="2000" [ngStyle]="{ 'max-width': '100%' }">
+                    <ng-template pTemplate="item" let-item>
+                        <div class="surface-800 border-1 border-white-alpha-10 border-round-xl p-3 md:p-5 h-full mx-2
+                 shadow-2 relative transition-transform transition-duration-300 flex flex-column justify-content-between
+                 expertise-box ">
+
+                            <!-- Index -->
+                            <span class="absolute top-0 right-0 text-6xl font-bold text-white-alpha-10 mr-3 mt-2">
+                                {{item.index | number:'2.0' }}
+                            </span>
+
+                            <h3 class="text-xl font-bold text-white mb-3">
+                                {{ item.title }}
+                            </h3>
+
+                            <p class="text-sm text-300 line-height-3">
+                                {{ item.description }}
+                                <p-divider></p-divider>
+                            </p>
+
+                            <p class="text-orange-500 font-semibold text-sm flex align-items-center gap-2
+                    mb-3  cursor-pointer">
+                                View Details <i class="pi pi-arrow-right text-xs"></i>
+                            </p>
+
+                        </div>
+                    </ng-template>
+                </p-carousel>
+            </div>
+
+            <!-- <div>
+    <div class="grid">
+
+                <div class="col-12 md:col-6 lg:col-3" *ngFor="let item of services; let i = index">
+
+                    <div class="surface-800 border-1 border-white-alpha-10 border-round-xl p-5 h-full
+                 shadow-2 relative transition-transform transition-duration-300 flex flex-column justify-content-between
+                 expertise-box ">
+
+                        
+                        <span class="absolute top-0 right-0 text-6xl font-bold text-white-alpha-10 mr-3 mt-2">
+                            {{ (i + 1) | number:'2.0' }}
+                        </span>
+
+                        <h3 class="text-xl font-bold text-white mb-3">
+                            {{ item.title }}
+                        </h3>
+
+                        <p class="text-sm text-300 line-height-3">
+                            {{ item.description }}
+                            <p-divider></p-divider>
+                        </p>
+
+                        <p class="text-orange-500 font-semibold text-sm flex align-items-center gap-2
+                    mb-3  cursor-pointer">
+                            View Details <i class="pi pi-arrow-right text-xs"></i>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+</div> -->
+
+        </div>
+    </section>
+
+    <!-- expertise section end -->
+
+    <!-- portfolio section start -->
+    <section class="surface-0 py-4 container">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+
+            <!-- Section Header -->
+            <span class="text-orange-500 font-semibold text-sm letter-spacing-2">
+                PORTFOLIO
+            </span>
+
+            <h2 class="text-4xl md:text-5xl font-bold text-900 mt-2 mb-0">
+                Masterpieces We've Built
+            </h2>
+
+            <p class="text-600 test-base md:text-lg mt-0 ">
+                From luxury villas to commercial hubs, explore our diverse portfolio.
+            </p>
+
+            <!-- Cards -->
+            <div class="grid justify-content-center">
+                <div class="col-12 md:col-4 " *ngFor="let project of projects; let i = index">
+
+                    <div class="surface-card border-round-xl overflow-hidden shadow-2 h-full project-card">
+
+                        <!-- Image -->
+                        <div class="relative">
+                            <img [src]="project.image" class="w-full h-15rem object-fit-cover " loading="lazy" />
+
+                            <span class="absolute top-0 left-0 m-3 px-3 py-1 text-xs font-semibold
+                     border-round-lg surface-0 text-800">
+                                {{ project.category }}
+                            </span>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-4 text-left">
+                            <h3 class="text-xl font-bold text-900 mb-2">
+                                {{ project.title }}
+                            </h3>
+
+                            <div class="flex align-items-center gap-2 mb-4">
+                                <span class="p-1 border-circle bg-green-600"></span>
+                                <span class="text-600 text-sm">{{ project.location }}</span>
+                            </div>
+
+                            <button pButton type="button" label="View Project"
+                                class="p-button-outlined p-button-secondary w-full">
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Button -->
+            <div class="mt-7">
+                <button pButton label="View All Projects" class="md:p-button-lg logo_black_bg px-6">
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- portfolio section end -->
+    <!-- testimonial section start -->
+    <section class="testimonials-section container py-4">
+        <div class="text-center mb-6">
+            <span class="section-tag">TESTIMONIALS</span>
+            <h2 class="section-title">Loved by Homeowners</h2>
+            <span class="section-underline"></span>
+        </div>
+
+        <div class="grid justify-content-center">
+            <div class="col-12 md:col-4" *ngFor="let t of testimonials">
+                <div class="testimonial-card">
+
+                    <!-- Stars -->
+                    <div class="flex align-items-center gap-1 mb-3">
+                        <i class="pi pi-star-fill star" *ngFor="let s of [].constructor(t.rating)"></i>
+                        <i class="pi pi-star star-muted" *ngFor="let s of [].constructor(5 - t.rating)"></i>
+                    </div>
+
+                    <!-- Quote -->
+                    <div class="quote-icon">“</div>
+
+                    <p class="testimonial-text">
+                        "{{ t.message }}"
+                    </p>
+
+                    <div class="divider"></div>
+
+                    <!-- User -->
+                    <div class="flex align-items-center gap-3">
+                        <div class="avatar" [ngStyle]="{ 'background': t.avatarBg }">
+                            {{ t.initials }}
+                        </div>
+
+                        <div>
+                            <h4 class="name">{{ t.name }}</h4>
+                            <p class="role">{{ t.role }}</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- testimonial section end -->
+
+    <!-- dream section start -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2 class="pb-0 mb-0">Ready to Build Your Dream Space?</h2>
+
+            <p class="pt-0 mt-0">
+                Stop worrying about construction hassles. Talk to our expert engineers<br />
+                today and get a free site inspection and cost estimate.
+            </p>
+
+            <div class="cta-actions">
+                <button pButton type="button" class="cta-btn p-button-lg call-btn logo_orng">
+                    <i class="pi pi-phone mr-2"></i>
+                    Call Now
+                </button>
+
+                <button pButton type="button" class="cta-btn quote-btn">
+                    Get a Free Quote
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- dream section end -->
+</div>

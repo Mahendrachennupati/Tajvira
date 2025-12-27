@@ -1,0 +1,84 @@
+<!-- HERO -->
+<section class="about-hero-sm md:about-hero">
+    <div class="hero-content container flex flex-column justify-content-around">
+        <div>
+            <h1 class="text-4xl md:text-5xl p-0 m-0 line-height-1">
+                Building Trust,<br />One Brick at a Time
+            </h1>
+            <p class="text-lg line-height-3">
+                TajVira Constructions was founded with a singular mission: to bring<br>
+                transparency and professionalism to the unorganized construction sector.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- OUR STORY -->
+<section class="about-section container py-4">
+    <div class="grid">
+        <!-- Story -->
+        <div class="col-12 md:col-6">
+            <h1 class="section-title m-0">Our Story</h1>
+            <p class="story-text ">
+                Started in 2010, TajVira has grown from a small contracting firm to a
+                premier turnkey construction company. We identified the pain points of
+                homeowners—delays, hidden costs, and poor quality—and built a tech-enabled
+                process to solve them.
+            </p>
+            <p class="story-text md:w-8">
+                Today, we are proud to have delivered over 350 happy homes and commercial
+                spaces across the country.
+            </p>
+        </div>
+
+        <!-- Mission & Vision -->
+        <div class="col-12 md:col-6 ">
+            <div class="info-card">
+                <i class="pi pi-bullseye info-icon"></i>
+                <div>
+                    <h4 class="pb-1 m-0">Our Mission</h4>
+                    <p class="text-sm p-0 m-0">To simplify construction through technology and transparency.</p>
+                </div>
+            </div>
+
+            <div class="info-card mt-3">
+                <i class="pi pi-eye info-icon"></i>
+                <div>
+                    <h4 class="pb-1 m-0">Our Vision</h4>
+                    <p class="text-sm p-0 m-0">To be India's most trusted construction partner.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="grid stats-grid">
+        <div class="col-6 md:col-3" *ngFor="let stat of stats">
+            <div class="stat-card">
+                <h3>{{ stat.value }}</h3>
+                <p>{{ stat.label }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- LEADERS -->
+<section class="leaders-section ">
+    <div class="container">
+        <h1 class="text-center mt-0">Meet The Leaders</h1>
+
+        <div class="grid justify-content-center mt-5">
+            <div class="col-12 md:col-4 text-center" *ngFor="let leader of leaders">
+                <div class="leader-card flex flex-column align-items-center">
+                    <div class="img-container">
+                        <img [src]="leader.image" />
+                    </div>
+
+                    <h3>{{ leader.name }}</h3>
+                    <span>{{ leader.role }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
